@@ -134,7 +134,7 @@ export class OwnerFormComponent implements OnInit {
       model: [car?.model || '', [...this.basicCarValidator]],
       year: [
         car?.year || '',
-        [Validators.required, CustomValidator.yearValidator(1990)],
+        [Validators.required, Validators.pattern("^[0-9]*$"), CustomValidator.yearValidator(1990)],
       ],
     });
   }

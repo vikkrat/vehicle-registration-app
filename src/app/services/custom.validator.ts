@@ -21,12 +21,8 @@ export class CustomValidator {
   static yearValidator(minYear: number): ValidatorFn {
     return function (control: AbstractControl): ValidationErrors | null {
       const currentYear = new Date().getFullYear();
-      const year = control.value;
-      if (
-        year.length != 4 ||
-        parseInt(year) < minYear ||
-        parseInt(year) > currentYear
-      ) {
+      const year = parseInt(control.value, 10);
+      if (year < minYear || year > currentYear) {
         return { invalidYear: true };
       }
       return null;

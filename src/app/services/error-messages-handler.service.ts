@@ -67,6 +67,7 @@ export class ErrorMessagesHandlerService {
     },
     year: {
       required: 'Year is required.',
+      pattern: 'Year need to be a number.',
       invalidYear: 'Please, use numbers in the range 1990 - the current year.',
     },
   };
