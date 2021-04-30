@@ -1,0 +1,56 @@
+<form class="form" [formGroup]="carGroup">
+  <table class="full-width" cellspacing="0">
+    <tr>
+      <td>
+        <mat-label>Registration Number</mat-label>
+        <mat-form-field class="full-width">
+          <input type="text" matInput formControlName="registrationNumber" />
+        </mat-form-field>
+        <mat-error *ngIf="errorMessages.registrationNumber">
+          {{ errorMessages.registrationNumber }}
+        </mat-error>
+      </td>
+
+      <td>
+        <mat-label>Producer</mat-label>
+        <mat-form-field class="full-width">
+          <input type="text" matInput formControlName="producer" />
+        </mat-form-field>
+        <mat-error *ngIf="errorMessages.producer">
+          {{ errorMessages.producer }}
+        </mat-error>
+      </td>
+
+      <td>
+        <mat-label>Model</mat-label>
+        <mat-form-field class="full-width">
+          <input type="text" matInput formControlName="model" />
+        </mat-form-field>
+        <mat-error *ngIf="errorMessages.model">
+          {{ errorMessages.model }}
+        </mat-error>
+      </td>
+
+      <td>
+        <mat-label>Year</mat-label>
+        <mat-form-field class="full-width">
+          <input matInput formControlName="year" />
+        </mat-form-field>
+        <mat-error *ngIf="errorMessages.year">
+          {{ errorMessages.year }}
+        </mat-error>
+      </td>
+
+      <td>
+        <button
+          type="button"
+          *ngIf="carsAmount > 1"
+          mat-icon-button
+          (click)="deleteCar($event)"
+        >
+          <mat-icon>delete_outline</mat-icon>
+        </button>
+      </td>
+    </tr>
+  </table>
+</form>
